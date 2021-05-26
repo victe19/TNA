@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div style="height: 82.5vh">
+        <div class="container">
+            <h2 class="display-4">Upload a file</h2>
+            <hr>
+            <p>Files can be .WAV or .JPEG</p>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p>File: {{ form.file }}</p>
+                <p>Subject name: {{ form.subject }}</p>
+                <p>Professor's name: {{ form.prof }}</p>
+                <p>Day of the month: {{ form.day }}</p>
+                <p>Month: {{ form.month }}</p>
+                <button title="Upload the file" type="submit" class="btn btn-outline-primary waves-effect">Upload File</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+

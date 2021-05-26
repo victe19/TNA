@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+
+        {% for file in files %}
+
+            <tr>
+                <td>File: {{ file.file }}</td><br>
+                <td>Subject: {{ file.subject }}</td><br>
+                <td>Professor: {{ file.prof }}</td><br>
+                <td>Day: {{ file.day }}</td><br>
+                <td>Month: {{ file.month }}</td><br>
+                <td>
+                    <form method="post" action="{% url 'delete_file' file.pk %}">
+                        {% csrf_token %}
+                        <button title="Delete File" type="submit" class="btn btn-outline-primary ">Delete
+                        </button>
+                    </form>
+                </td><br>
+                <td>
+                    <form method="get" action="{% url 'start' file.pk %}">
+                        {% csrf_token %}
+                        <button title="Get the transcribed file" type="submit" class="btn btn-outline-primary">Analyze
+                        </button>
+                    </form>
+                </td>
+                {{ error }}
+            </tr>
+        {% endfor %}
+
+{% endblock %}
+
+
+

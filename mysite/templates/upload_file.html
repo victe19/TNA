@@ -10,18 +10,22 @@
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row">
-                    <p>Fitxer: {{ form.file }}</p>
+                    <div class="col"><p>Fitxer:</p></div><div class="col"><p> {{ form.file }}</p></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><p>Asignatura:</p></div><div class="col"><p> {{ form.subject }}</p></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"><p>Professor:</p></div><div class="col"><p> {{ form.prof }}</p></div>
+                </div>
+
+                <div class="row">
+                    <div class="col"> <p>Dia:</p></div><div class="col"><p> {{ form.day }}</p></div>
                 </div>
                 <div class="row">
-                    <p>Asignatura: {{ form.subject }}</p><div class="row">
-                </div>
-                <div class="row">
-                    <p>Professor: {{ form.prof }}</p>
-                </div>
-                <div class="row">
-                    <p>Dia: {{ form.day }}</p>
-                <div class="row">
-                    <p>Mes: {{ form.month }}</p>
+                    <div class="col"><p>Mes: </p></div><div class="col"><p> {{ form.month }}</p></div>
                 </div>
                 <button title="Upload the file" type="submit" class="btn btn-outline-primary waves-effect">Upload File</button>
             </form>

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block body %}
-    <h2 class="display-4">Llista de fitxer pujats</h2>
+    <h2 class="display-4">Llista de fitxers pujats</h2>
 
         {% for file in files %}
 <hr>
-            <tr class="row">
+            <tr class="container">
                 <div class="col">
                     <td>File: {{ file.file }}</td><br>
                     <td>Subject: {{ file.subject }}</td><br>
@@ -13,7 +13,7 @@
                     <td>Month: {{ file.month }}</td><br>
                 </div>
                 <div class="col">
-                    <div class="row ml-3">
+
                         <td>
                             <form method="post" action="{% url 'delete_file' file.pk %}">
                                 {% csrf_token %}
@@ -21,9 +21,9 @@
                                 </button>
                             </form>
                         </td>
-                    </div>
 
-                    <div class="row ml-3 mt-2">
+
+<br>
                         <td>
                             <form method="get" action="{% url 'start' file.pk %}">
                                 {% csrf_token %}
@@ -31,7 +31,7 @@
                                 </button>
                             </form>
                         </td>
-                    </div>
+
                 {{ error }}
                 </div>
             </tr>

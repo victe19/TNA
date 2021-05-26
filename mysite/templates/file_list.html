@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block body %}
+    <h2 class="display-4">Llista de fitxer pujats</h2>
 
         {% for file in files %}
-
+<hr>
             <tr class="row">
                 <div class="col">
                     <td>File: {{ file.file }}</td><br>
@@ -12,7 +13,7 @@
                     <td>Month: {{ file.month }}</td><br>
                 </div>
                 <div class="col">
-                    <div class="row">
+                    <div class="row ml-5">
                         <td>
                             <form method="post" action="{% url 'delete_file' file.pk %}">
                                 {% csrf_token %}
@@ -21,7 +22,8 @@
                             </form>
                         </td>
                     </div>
-                    <div class="row">
+
+                    <div class="row ml-5 mt-3">
                         <td>
                             <form method="get" action="{% url 'start' file.pk %}">
                                 {% csrf_token %}

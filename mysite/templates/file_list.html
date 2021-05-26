@@ -12,7 +12,7 @@
                     <td>Day: {{ file.day }}</td><br>
                     <td>Month: {{ file.month }}</td><br>
                 </div>
-                <div class="col">
+                <div style="display: inline-block;" class="col">
 
                         <td>
                             <form method="post" action="{% url 'delete_file' file.pk %}">
@@ -21,10 +21,7 @@
                                 </button>
                             </form>
                         </td>
-
-
-<br>
-                        <td>
+                        <td class="ml-5">
                             <form method="get" action="{% url 'start' file.pk %}">
                                 {% csrf_token %}
                                 <button title="Get the transcribed file" type="submit" class="btn btn-outline-primary">Crear Doc

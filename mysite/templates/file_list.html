@@ -3,13 +3,16 @@
 
         {% for file in files %}
 
-            <tr>
-                <td>File: {{ file.file }}</td><br>
-                <td>Subject: {{ file.subject }}</td><br>
-                <td>Professor: {{ file.prof }}</td><br>
-                <td>Day: {{ file.day }}</td><br>
-                <td>Month: {{ file.month }}</td><br>
-                <td>
+            <tr class="row">
+                <div class="col">
+                    <td>File: {{ file.file }}</td><br>
+                    <td>Subject: {{ file.subject }}</td><br>
+                    <td>Professor: {{ file.prof }}</td><br>
+                    <td>Day: {{ file.day }}</td><br>
+                    <td>Month: {{ file.month }}</td><br>
+                    <td>
+                </div>
+                <div class="row">
                     <form method="post" action="{% url 'delete_file' file.pk %}">
                         {% csrf_token %}
                         <button title="Delete File" type="submit" class="btn btn-outline-primary ">Delete
@@ -24,6 +27,7 @@
                     </form>
                 </td>
                 {{ error }}
+                </div>
             </tr>
         {% endfor %}
 

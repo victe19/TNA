@@ -10,7 +10,7 @@
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="row">
-                    <div class="col"><p>Fitxer:</p></div><div class="col"><p> {{ form.file }}</p></div>
+                    <p>Fitxer: {{ form.file }}</p>
                 </div>
 
                 <div class="row">
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col"><p>Mes: </p></div><div class="col"><p> {{ form.month }}</p></div>
                 </div>
-                <button title="Upload the file" type="submit" class="btn btn-outline-primary waves-effect">Upload File</button>
+                <button title="Upload the file" type="submit" class="btn btn-outline-primary waves-effect">Pujar</button>
             </form>
         </div>
     </div>

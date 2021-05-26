@@ -3,17 +3,26 @@
 {% block body %}
     <div style="height: 82.5vh">
         <div class="container">
-            <h2 class="display-4">Upload a file</h2>
+            <h2 class="display-4">Pujar fitcher</h2>
             <hr>
-            <p>Files can be .WAV or .JPEG</p>
+            <p>Els fitxers poden ser .WAV or .JPEG</p>
 
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
-                <p>File: {{ form.file }}</p>
-                <p>Subject name: {{ form.subject }}</p>
-                <p>Professor's name: {{ form.prof }}</p>
-                <p>Day of the month: {{ form.day }}</p>
-                <p>Month: {{ form.month }}</p>
+                <div class="row">
+                    <p>Fitxer: {{ form.file }}</p>
+                </div>
+                <div class="row">
+                    <p>Asignatura: {{ form.subject }}</p><div class="row">
+                </div>
+                <div class="row">
+                    <p>Professor: {{ form.prof }}</p>
+                </div>
+                <div class="row">
+                    <p>Dia: {{ form.day }}</p>
+                <div class="row">
+                    <p>Mes: {{ form.month }}</p>
+                </div>
                 <button title="Upload the file" type="submit" class="btn btn-outline-primary waves-effect">Upload File</button>
             </form>
         </div>

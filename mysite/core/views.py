@@ -61,7 +61,7 @@ def start(request, pk):
         ressource = File.objects.get(pk=pk)
 
         filename, file_extension = os.path.splitext(str(ressource.file))
-        credentials = service_account.Credentials.from_service_account_file("media/angelic-cat-312411-d70e72cccae5.json")
+        credentials = service_account.Credentials.from_service_account_file("media/test-a78a8948d071.json")
 
         if file_extension == ".wav":
 

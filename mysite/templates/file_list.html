@@ -10,22 +10,26 @@
                     <td>Professor: {{ file.prof }}</td><br>
                     <td>Day: {{ file.day }}</td><br>
                     <td>Month: {{ file.month }}</td><br>
-                    <td>
                 </div>
-                <div class="row">
-                    <form method="post" action="{% url 'delete_file' file.pk %}">
-                        {% csrf_token %}
-                        <button title="Delete File" type="submit" class="btn btn-outline-primary ">Delete
-                        </button>
-                    </form>
-                </td><br>
-                <td>
-                    <form method="get" action="{% url 'start' file.pk %}">
-                        {% csrf_token %}
-                        <button title="Get the transcribed file" type="submit" class="btn btn-outline-primary">Analyze
-                        </button>
-                    </form>
-                </td>
+                <div class="col">
+                    <div class="row">
+                        <td>
+                            <form method="post" action="{% url 'delete_file' file.pk %}">
+                                {% csrf_token %}
+                                <button title="Delete File" type="submit" class="btn btn-outline-primary "> Eliminar
+                                </button>
+                            </form>
+                        </td>
+                    </div>
+                    <div class="row">
+                        <td>
+                            <form method="get" action="{% url 'start' file.pk %}">
+                                {% csrf_token %}
+                                <button title="Get the transcribed file" type="submit" class="btn btn-outline-primary">Crear Doc
+                                </button>
+                            </form>
+                        </td>
+                    </div>
                 {{ error }}
                 </div>
             </tr>

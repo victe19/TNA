@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block body %}
 
-{% load static %}
-<div class="container">
-    <h2 class="display-4">Tutorial</h2>
-    <hr>
+<div style="height: 82.5vh">
+    <div class="container">
+        <h2 class="display-4">Pujar fitxer</h2>
+        <hr>
         <ul>
             <li>Pujar el fitxer a transcriure i omplir les dades necessaries.</li> <img src="{% static 'img/pas_1.png' %}">
             <li>Anar a la llista de fitxer i clickar en crear el document. </li> <img src="{% static 'img/pas_2.png' %}">
             <li>Estudiar dels apunts fàcils.</li>  <img src="{% static 'img/pas_3.png' %}">
         </ul>
+    </div>
 </div>
 
 {% endblock %}

@@ -14,6 +14,7 @@ urlpatterns = [
     path('files/<int:pk>', views.start, name='start'),
     path('save/', views.save, name='save'),
     path('about/',views.about, name="about"),
+    path('tutorial/',views.tutorial, name="tutorial"),
 
 
     path('admin/', admin.site.urls),

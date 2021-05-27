@@ -24,6 +24,9 @@ class Home(TemplateView):
 
 def about(request):
     return render(request,"about.html")
+    
+def tutorial(request):
+    return render(request,"tutorial.html")
 
 # Handle the file list view
 def file_list(request):

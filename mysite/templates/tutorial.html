@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block body %}
-
+{% load staticfiles %}
 <ul>
-    <li>Pujar el fitxer a transcriure i omplir les dades necessaries. <img src="{{STATIC_URL}}img/pas_1.png"></li>
-    <li>Anar a la llista de fitxer i clickar en crear el document. <img src="{{STATIC_URL}}img/pas_2.png"></li>
-    <li>Estudiar dels apunts fàcils. <img src="{{STATIC_URL}}img/pas_3.png"></li>
+    <li>Pujar el fitxer a transcriure i omplir les dades necessaries.</li> <img src="{% static 'img/pas_1.png' %}">
+    <li>Anar a la llista de fitxer i clickar en crear el document. </li> <img src="{% static 'img/pas_2.png' %}">
+    <li>Estudiar dels apunts fàcils.</li>  <img src="{% static 'img/pas_3.png' %}">
 </ul>
 
 {% endblock %}
